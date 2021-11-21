@@ -48,5 +48,4 @@ namespace comp
 		olc::Sprite* sprite;
 	};
 }
-}
 
