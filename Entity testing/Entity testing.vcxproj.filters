@@ -24,7 +24,7 @@
     <ClCompile Include="entities.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="compoment.cpp">
+    <ClCompile Include="component.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -38,7 +38,7 @@
     <ClInclude Include="entities.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="compoment.h">
+    <ClInclude Include="component.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

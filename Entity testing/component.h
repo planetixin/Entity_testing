@@ -3,18 +3,18 @@
 
 namespace comp
 {
-	class compoment
+	class component
 	{
 	public:
-		compoment();
-		~compoment();
+		component();
+		~component();
 
 		virtual void Update(float fElapsedTime, olc::PixelGameEngine* pge);
 
 
 	};
 
-	class transform : public compoment
+	class transform : public component
 	{
 	public:
 		transform()
@@ -30,5 +30,23 @@ namespace comp
 	private:
 		olc::vd2d pos = { 0,0 };
 	};
+
+	class Sprite : public component
+	{
+	public:
+		Sprite()
+		{
+
+		}
+
+		void Update(float fElapsedTime, olc::PixelGameEngine* pge) override
+		{
+			
+		}
+
+	private:
+		olc::Sprite* sprite;
+	};
+}
 }
 
