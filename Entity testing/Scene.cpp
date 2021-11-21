@@ -9,12 +9,10 @@ namespace sce
 		olc::vd2d vel = { 0, 0 };
 	};
 
-	Scene::Scene(olc::PixelGameEngine* _pge)
+	Scene::Scene()
 	{
-		pge = _pge;
-
-		entt::entity entity = m_Registry.create();
-		m_Registry.emplace<transform>(entity);
+		entity ent = entity();
+		entities.push_back(ent);
 	}
 
 	Scene::~Scene()
@@ -22,17 +20,11 @@ namespace sce
 
 	}
 
-	void Scene::Update(float fElapsedTime)
+	void Scene::Update(float fElapsedTime, olc::PixelGameEngine* pge)
 	{
-		auto view = m_Registry.view<transform>();
-		//drawEntities
-		for (auto entity : view) {
-
-			auto& trans = view.get<transform>(entity);
-			trans.pos += trans.vel * fElapsedTime;
-			if(trans.pos.x < pge->ScreenWidth()  / 2 && trans.pos.x > -pge->ScreenWidth()  / 2 &&
-			   trans.pos.y < pge->ScreenHeight() / 2 && trans.pos.y > -pge->ScreenHeight() / 2)
-				pge->DrawCircle(trans.pos.x + pge->ScreenWidth()/2, trans.pos.y + pge->ScreenHeight()/2, 20);
+		for (auto& ent : entities)
+		{
+			ent.Update(fElapsedTime, pge);
 		}
 	}
 

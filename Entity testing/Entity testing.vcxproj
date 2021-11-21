@@ -141,11 +141,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="compoment.cpp" />
+    <ClCompile Include="entities.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Scene.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="entt\entt.hpp" />
+    <ClInclude Include="compoment.h" />
+    <ClInclude Include="entities.h" />
     <ClInclude Include="olcPixelGameEngine.h" />
     <ClInclude Include="Scene.h" />
   </ItemGroup>

@@ -2,20 +2,19 @@
 
 #include <iostream>
 #include "olcPixelGameEngine.h"
-#include "entt/entt.hpp"
+#include "entities.h"
 
 namespace sce 
 {
 	class Scene
 	{
 	public:
-		Scene(olc::PixelGameEngine* _pge);
+		Scene();
 		~Scene();
 
-		void Update(float fElapsedTime);
+		void Update(float fElapsedTime, olc::PixelGameEngine* pge);
 	private:
-		olc::PixelGameEngine* pge;
-		entt::registry m_Registry;
+		std::vector<entity> entities;
 	};
 }
 

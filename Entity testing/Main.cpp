@@ -13,7 +13,7 @@ public:
         sAppName = "EntityDemo";
     }
 protected:
-    sce::Scene* sce = new sce::Scene(this);
+    sce::Scene sce = sce::Scene();
 private:
     bool OnUserCreate()
     {
@@ -24,7 +24,7 @@ private:
     {
         Clear(olc::BLACK);
 
-        sce->Update(fElapsedTime);
+        sce.Update(fElapsedTime, this);
 
 
 
